@@ -72,4 +72,26 @@ class SeriesController extends Controller
 
         return response()->json($response);
     }
+
+    public function update($id, Request $request)
+    {
+        try{
+            $serie = Serie::find($id);
+            $serie->fill($request->all());
+            $serie->save();
+
+            $response = [
+                'status' => 'success',
+                'data' => $serie,
+            ];
+        } catch(\Exception $e){
+            $response = [
+                'status' => 'error',
+                'msg' => 'Error finding a serie',
+                'error' => $e->getMessage()
+            ];
+        }
+
+        return response()->json($response);
+    }
 }

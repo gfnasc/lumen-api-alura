@@ -9,5 +9,6 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function() use ($router){
     $router->get('/series', 'SeriesController@index');
     $router->get('/series/{id}', 'SeriesController@show');
+    $router->put('/series/{id}', 'SeriesController@update');
     $router->post('/series', 'SeriesController@store');
 });
