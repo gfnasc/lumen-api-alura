@@ -49,7 +49,7 @@ class SeriesController extends Controller
         return response()->json($response);
     }
 
-    public function getSerie($id)
+    public function show($id)
     {
         try{
             $serie = Serie::find($id);
