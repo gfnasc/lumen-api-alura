@@ -94,4 +94,22 @@ class SeriesController extends Controller
 
         return response()->json($response);
     }
+
+    public function destroy($id)
+    {
+        try {
+            Serie::destroy($id);
+
+            $response = [
+                'status' => 'success'
+            ];
+        } catch (\Exception $e) {
+            $response = [
+                'status' => 'error',
+                'msg' => 'the id that was informed does not exist'
+            ];
+        }
+
+        return response()->json($response);
+    }
 }
