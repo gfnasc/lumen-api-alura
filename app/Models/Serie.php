@@ -10,6 +10,8 @@ class Serie extends Model {
     'name'
   ];
 
+  public $timestamps = false;
+
   public function episodes()
   {
     return $this->hasMany(Episode::class);
