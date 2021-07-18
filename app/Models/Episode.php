@@ -20,4 +20,9 @@ class Episode extends Model {
     return $this->belongsTo(Serie::class);
   }
 
+  public function getViewAttribute($view) :bool
+  {
+    return $view;
+  }
+
 }
