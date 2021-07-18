@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\Serie;
+use App\Models\Episode;
 
-class SeriesController extends BaseController
+class EpisodesController extends BaseController
 {
     public function __construct()
     {
-        $this->class = Serie::class;
+        $this->class = Episode::class;
     }
 }
