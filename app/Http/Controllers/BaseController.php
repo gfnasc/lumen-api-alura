@@ -11,7 +11,7 @@ abstract class BaseController extends Controller
 
     public function index() {
         try{
-            $all_data = $this->class::all();
+            $all_data = $this->class::paginate();
 
             $response = [
                 'status' => 'success',
@@ -28,7 +28,7 @@ abstract class BaseController extends Controller
         return response()->json($response);
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         try{
             $data = $this->class::create($request->all());

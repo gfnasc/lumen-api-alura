@@ -10,6 +10,7 @@ class Serie extends Model {
     'name'
   ];
 
+  protected $perPage = 5;
   public $timestamps = false;
 
   public function episodes()
